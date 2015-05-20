@@ -47,7 +47,7 @@ public class ColorSet extends Application {
             for (int r = 0; r < 255; r += SHIFT) {
                 for (int g = 0; g < 255; g += SHIFT) {
                     String key = r+"_"+g+"_"+b;
-                    res.put(key, false);
+                    //res.put(key, false);
                     Rectangle rect = new Rectangle(90, 90, Color.rgb(r, g, b));
                     gridPane.add(rect, r / SHIFT, g / SHIFT);
                     rect.setOnMouseEntered(e -> {
@@ -56,7 +56,8 @@ public class ColorSet extends Application {
                     });
                     rect.setOnMouseClicked(e -> {
                         rect.setRotate(0);
-                        res.put(key, false);
+                        //res.put(key, false);
+                        res.remove(key);
                     });
                 }
             }
